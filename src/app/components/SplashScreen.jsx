@@ -151,7 +151,7 @@ const SplashScreen = ({ finishLoading }) => {
         className="flex h-screen items-center justify-center"
         isMounted={isMounted}
       >
-        <div className="flex gap-[-2rem] flex-row flex-wrap w-full h-auto scale-[.6] sm:scale-100 sm:h-[30rem] justify-center sm:justify-evenly items-center">
+        <div className="flex gap-[-2rem] flex-row flex-wrap w-full h-auto scale-[.4] sm:scale-100 sm:h-[30rem] justify-center sm:justify-evenly items-center">
           <svg
             id="b-svg"
             className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
