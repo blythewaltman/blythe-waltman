@@ -151,38 +151,68 @@ const SplashScreen = ({ finishLoading }) => {
         className="flex h-screen items-center justify-center"
         isMounted={isMounted}
       >
-        <div className="flex flex-row flex-wrap w-full h-[30rem] justify-evenly items-center">
-          <svg id="b-svg" className="fill-[#edaf9700]" width="200" height="200">
+        <div className="flex gap-[-2rem] flex-row flex-wrap w-full h-auto scale-[.6] sm:scale-100 sm:h-[30rem] justify-center sm:justify-evenly items-center">
+          <svg
+            id="b-svg"
+            className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
+            width="200"
+            height="200"
+          >
             <polygon
               stroke="BDCDD6"
               points="0 0, 0 200, 130 200, 154 200, 170 200, 178 200, 200 200, 200 160, 200 150, 200 132, 200 118, 200 108, 200 102, 200 96, 200 92, 200 84, 200 74, 200 62, 200, 50 200, 34 200, 20 200, 10 200, 4 200, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
             ></polygon>
           </svg>
-          <svg id="l-svg" className="fill-[#edaf9700]" width="200" height="200">
+          <svg
+            id="l-svg"
+            className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
+            width="200"
+            height="200"
+          >
             <polygon
               stroke="BDCDD6"
               points="0 0, 0 200, 200 200, 200 130, 200 0, 70 0, 0 0"
             ></polygon>
           </svg>
-          <svg id="y-svg" className="fill-[#edaf9700]" width="200" height="200">
+          <svg
+            id="y-svg"
+            className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
+            width="200"
+            height="200"
+          >
             <polygon
               stroke="BDCDD6"
               points="0 0, 70 0, 100 0, 130 0, 200 0, 200 90, 200 200, 0 200, 0 90, 0 0"
             ></polygon>
           </svg>
-          <svg id="t-svg" className="fill-[#edaf9700]" width="200" height="200">
+          <svg
+            id="t-svg"
+            className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
+            width="200"
+            height="200"
+          >
             <polygon
               stroke="BDCDD6"
               points="0 0, 200 0, 200 60, 200 100, 200 200, 0 200, 0 100, 0 60, 0 0"
             ></polygon>
           </svg>
-          <svg id="h-svg" className="fill-[#edaf9700]" width="200" height="200">
+          <svg
+            id="h-svg"
+            className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
+            width="200"
+            height="200"
+          >
             <polygon
               stroke="BDCDD6"
               points="0 0, 70 0, 70 0, 130 0, 130 0, 200 0, 200 200, 130 200, 130 200, 70 200, 70 200, 0 200, 0 0"
             ></polygon>
           </svg>
-          <svg id="e-svg" className="fill-[#edaf9700]" width="200" height="200">
+          <svg
+            id="e-svg"
+            className="fill-[#edaf9700] transform sm:scale-100 scale-[.3]"
+            width="200"
+            height="200"
+          >
             <polygon
               stroke="BDCDD6"
               points="0 0, 200 0, 200 50, 200 50, 200 80, 200 80, 200 120, 200 120, 200 150, 200 150, 200 200, 0 200, 0 0"
