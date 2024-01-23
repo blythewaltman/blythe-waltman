@@ -260,7 +260,7 @@ export default function Work() {
       className={`font-body min-h-screen flex items-center justify-center ${backgroundColor}`}
     >
       <Header />
-      <div className="mt-[4rem] mb-[2rem] lg:w-[80rem] justify-center items-center align-center flex flex-col lg:flex-wrap lg:flex-row gap-[2rem] h-auto w-auto bg-transparent">
+      <div className=" mt-[5rem] lg:mt-[4rem] mb-[2rem] lg:w-[80rem] justify-center items-center align-center flex flex-col lg:flex-wrap lg:flex-row gap-[2rem] h-auto w-auto bg-transparent">
         {workInfo.map((company, index) => (
           <div
             key={index}
