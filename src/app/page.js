@@ -1,113 +1,131 @@
-import Image from 'next/image'
+"use client";
+
+import Image from "next/image";
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
+import anime from "animejs";
+import { useEffect } from "react";
+
+import Header from "./components/Header";
 
 export default function Home() {
+  const backgroundColor =
+    "bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald-900 via-stone-600 to-emerald-900";
+  const iconBackgroundColor = "bg-[#0e2f3cee]";
+  const imageBorderColor = "border-stone-600";
+  const divHolderColor = "bg-[#2a627882]";
+  const divBorderColor = "border-[#4695b582]";
+  const textColor = "text-[#e4dabac2]";
+  const fill = "fill-[#fff9e5c2]";
+  const color = <div className="bg-[#66c7ee82]"></div>;
+
+  const animate = () => {
+    const iconAnimation = anime.timeline({});
+
+    iconAnimation
+      .add({
+        targets: "#githubBackground",
+        opacity: [0, 1],
+        delay: 10,
+        easing: "easeInOutQuad",
+        duration: 500,
+        scale: 1.5,
+      })
+      .add({
+        targets: "#githubBackground",
+        delay: 0,
+        scale: 1,
+        duration: 500,
+        easing: "easeInOutExpo",
+      })
+      .add({
+        targets: "#linkedinBackground",
+        opacity: [0, 1],
+        delay: 10,
+        easing: "easeInOutQuad",
+        duration: 500,
+        scale: 1.5,
+      })
+      .add({
+        targets: "#linkedinBackground",
+        delay: 0,
+        scale: 1,
+        duration: 500,
+        easing: "easeInOutExpo",
+      });
+  };
+  useEffect(() => {
+    animate();
+  }, []);
+
+  const description = (
+    <div>
+      <p>
+        Hello! I&apos;m Blythe, a dynamic and motivated Full Stack Junior
+        Software Engineer with a keen interest in web development, mobile app
+        development, and AWS services.{" "}
+      </p>
+      <br></br>
+      <p>
+        I am actively seeking opportunities to contribute my skills and passion
+        to a dynamic team. If you are looking for a junior software engineer who
+        is dedicated, adaptable, and eager to learn, let&apos;s connect!
+      </p>
+    </div>
+  );
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main
+      className={`flex min-h-screen flex-col items-center justify-between ${backgroundColor}`}
+    >
+      <Header />
+      <div className="relative justify-center align-center flex flex-row mt-[6rem]">
+        <div
+          className={`flex flex-col border ${divBorderColor} border-r-transparent lg:flex-row w-3/4 lg:w-3/4 gap-4 justify-center items-center h-auto p-[2rem] ${divHolderColor} `}
+        >
+          <Image
+            className={`border ${imageBorderColor} shadow-lg rounded-lg`}
+            width={250}
+            height={100}
+            src="/profile.jpeg"
+            alt=""
+          />
+          <div
+            className={`flex justify-center align-center items-center text-sm lg:text-lg ${textColor} font-body`}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            {description}
+          </div>
+        </div>
+        <div
+          className={`flex border ${divBorderColor} flex-col gap-5 justify-center items-center p-[2rem] ${divHolderColor} w-[10rem]`}
+        >
+          <div
+            id="linkedinBackground"
+            className={`${iconBackgroundColor} opacity-0 w-[4rem] h-[4rem]`}
+          >
+            <a
+              href="https://www.linkedin.com/in/blythewaltman/"
+              target="_blank"
+            >
+              <FaLinkedin
+                id="linkedinIcon"
+                className={`w-full h-full ${fill}`}
+              ></FaLinkedin>
+            </a>
+          </div>
+          <div
+            id="githubBackground"
+            className={`${iconBackgroundColor} opacity-0 w-[4rem] h-[4rem]`}
+          >
+            <a href="https://github.com/blythewaltman" target="_blank">
+              <FaGithubSquare className={`w-full h-full ${fill}`} />
+            </a>
+          </div>
+          <div
+            id="socialsLine"
+            className="bg-slate-400 w-[.05rem] h-[20rem]"
+          ></div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
