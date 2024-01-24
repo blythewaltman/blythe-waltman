@@ -16,7 +16,6 @@ export default function Home() {
   const divBorderColor = "border-[#4695b582]";
   const textColor = "text-[#e4dabac2]";
   const fill = "fill-[#fff9e5c2]";
-  const color = <div className="bg-[#66c7ee82]"></div>;
 
   const animate = () => {
     const iconAnimation = anime.timeline({});
@@ -83,6 +82,7 @@ export default function Home() {
           className={`flex flex-col border ${divBorderColor} border-r-transparent lg:flex-row w-3/4 lg:w-3/4 gap-4 justify-center items-center h-auto p-[2rem] ${divHolderColor} `}
         >
           <Image
+            loading="lazy"
             className={`border ${imageBorderColor} shadow-lg rounded-lg`}
             width={250}
             height={100}

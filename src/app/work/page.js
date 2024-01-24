@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import Header from "../components/Header";
 import anime from "animejs";
 import { useEffect } from "react";
@@ -126,6 +124,7 @@ function LingoportXSnapchatImage() {
       </div>
       <div id="lingoport" className="h-auto w-auto col-start-2 row-start-2">
         <Image
+          loading="lazy"
           className="border rounded-xl"
           width={80}
           height={80}
@@ -194,6 +193,7 @@ function CUXMindBeWellImage() {
     <div className="grid grid-col-2 grid-row-2 h-full w-full">
       <div id="cu" className="h-auto w-auto col-start-1 row-start-1">
         <Image
+          loading="lazy"
           className="border rounded-xl"
           width={80}
           height={80}
@@ -203,6 +203,7 @@ function CUXMindBeWellImage() {
       </div>
       <div id="mindBeWell" className="h-auto w-auto col-start-2 row-start-2">
         <Image
+          loading="lazy"
           className="border rounded-xl"
           width={80}
           height={80}
