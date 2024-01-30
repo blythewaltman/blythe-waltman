@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between ${backgroundColor}`}
+      className={`flex min-h-screen flex-col items-center justify-between ${backgroundColor} overscroll-contain`}
     >
       <Header />
       <div className="relative justify-center align-center flex flex-row mt-[6rem]">
